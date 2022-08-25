@@ -28,3 +28,10 @@ const add: AddFunc = ( x: number, y: number ) => x + y ;
 const add2 = (nums: {a: number, b:number }) => nums.a + nums.b;
 
 // everething good with type
+
+//unions
+
+let maybeNum: number | string | boolean | AddFunc = 5;
+
+maybeNum = "hello";
+maybeNum = false;

@@ -15,4 +15,14 @@ const int2 : MyInterface = {
     y: 14
 }
 
+
+
 // everething good with type
+
+// functions
+
+type AddFunc = (x: number, y: number) => number ;
+
+const add: AddFunc = ( x: number, y: number ) => x + y ;
+
+add (123, 6)

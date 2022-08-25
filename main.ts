@@ -25,4 +25,6 @@ type AddFunc = (x: number, y: number) => number ;
 
 const add: AddFunc = ( x: number, y: number ) => x + y ;
 
-add (123, 6)
+const add2 = (nums: {a: number, b:number }) => nums.a + nums.b;
+
+// everething good with type

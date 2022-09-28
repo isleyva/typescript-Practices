@@ -1,4 +1,4 @@
 # typescript-Practices
 
 
-Practices with Typesript and differents technologics(principaly REACT)
+Practices with Typesript and differents technologics (mainly REACT).

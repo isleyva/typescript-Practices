@@ -1,3 +1,4 @@
-# typescript-basics
+# typescript-Practices
 
-Some basics exercises using Typescript
+
+Practices with Typesript and differents technologics(principaly REACT)

@@ -1,9 +1,12 @@
 import React, { ReactNode, ReactElement } from 'react';
 
+// type for a defined prop
 
 function Headings({title}: {title: string}){
   return <h1>{title}</h1>
 }
+
+//Type for Childrens
 
 function HeadingwithContext ({children}: {children: ReactNode}): ReactElement {
     return <h1>{children}</h1>
@@ -12,10 +15,12 @@ function HeadingwithContext ({children}: {children: ReactNode}): ReactElement {
 //Default properties
 
 const defaultContainerProps = {
-    heading: <h1> im a headin 1</h1>
+    heading: <h3> im a headin 1</h3>
 };
 
-function Container ({heading, children}: {children: ReactNode } & typeof defaultContainerProps ): ReactElement {
+type ContainerProps = {children: ReactNode } & typeof defaultContainerProps;
+
+function Container ({heading, children}: ContainerProps) : ReactElement {
   return <div><h1>{heading}</h1>{children}</div>
   }
 

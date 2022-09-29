@@ -29,13 +29,16 @@ function Container ({heading, children}: ContainerProps) : ReactElement {
   //Functional props
 
   function TextWithNumber ({
-    children
+    children,
+    header
   }:{
     children: (num: number) => ReactNode
+    header:(num: number) => ReactNode
   }) {
-    const [state, stateSet] = React.useState <number> (1)
+    const [state, stateSet] = React.useState <number> (0)
     return (
       <div>
+        <h3>{header(state)}</h3>
         <div>
           {children (state)}
         </div>
@@ -58,7 +61,7 @@ function App() {
      <Container>
       foo
      </Container>
-     <TextWithNumber>{(num: number) => <div> the number is {num}</div>}</TextWithNumber>
+     <TextWithNumber header={(num: number) => <div>header {num}</div>}>{(num: number) => <div> the number is {num}</div>}</TextWithNumber>
     </div>
   );
 }

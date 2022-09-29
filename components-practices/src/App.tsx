@@ -23,8 +23,32 @@ type ContainerProps = {children: ReactNode } & typeof defaultContainerProps;
 function Container ({heading, children}: ContainerProps) : ReactElement {
   return <div><h1>{heading}</h1>{children}</div>
   }
-
+// Props fuction
   Container.defaultProps = defaultContainerProps
+
+  //Functional props
+
+  function TextWithNumber ({
+    children
+  }:{
+    children: (num: number) => ReactNode
+  }) {
+    const [state, stateSet] = React.useState <number> (1)
+    return (
+      <div>
+        <div>
+          {children (state)}
+        </div>
+        <div>
+          <button onClick={() => stateSet(state + 1)}>add</button>
+        </div>
+      </div>
+    )
+  
+  }
+
+  
+
 
 function App() {
   return (
@@ -34,6 +58,7 @@ function App() {
      <Container>
       foo
      </Container>
+     <TextWithNumber>{(num: number) => <div> the number is {num}</div>}</TextWithNumber>
     </div>
   );
 }

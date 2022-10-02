@@ -6,10 +6,14 @@ interface Props {
 
 }
 
+interface textNode {
+    text: string
+}
+
 const TextField: React.FC <Props> = () => {
-  const [count, setCount] = useState(1)
+  const [count, setCount] = useState <textNode> ({text: "text"})
   // while you use useState it dectects type into as a number.
-  setCount(count + 1);
+  setCount({text});
  
     return (
     <div><input/></div>
